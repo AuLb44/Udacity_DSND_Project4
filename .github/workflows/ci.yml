@@ -2,7 +2,7 @@ name: CI
 
 on:
   push:
-    branches: [ main, add/docs-tests-ci ]
+    branches: [ main, add/docs-tests-ci, copilot/add-docs-tests-ci ]
   pull_request:
     branches: [ main ]
 
