@@ -41,11 +41,25 @@ def test_sklearn_import():
     assert KMeans is not None
 
 
+def test_scipy_import():
+    """Test that scipy can be imported successfully."""
+    import scipy
+    from scipy.sparse.linalg import svds
+    
+    assert scipy is not None
+    assert svds is not None
+
+
 def test_notebook_file_exists():
     """Test that the main notebook file exists."""
     import os
-    notebook_path = 'Recommendations_with_IBM.ipynb'
-    assert os.path.exists(notebook_path), f"Notebook file not found: {notebook_path}"
+    from pathlib import Path
+    
+    # Get the repository root (parent of tests directory)
+    repo_root = Path(__file__).parent.parent
+    notebook_path = repo_root / 'Recommendations_with_IBM.ipynb'
+    
+    assert notebook_path.exists(), f"Notebook file not found: {notebook_path}"
 
 
 def test_numpy_basic_operation():
